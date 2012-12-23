@@ -1,0 +1,14 @@
+{
+	"require": {
+		"illuminate/foundation": "1.2.*"
+	},
+	"autoload": {
+		"classmap": [
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/tests/TestCase.php"
+		]
+	},
+	"minimum-stability": "dev"
+}
