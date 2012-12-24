@@ -275,12 +275,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/illuminate/database",
-                "reference": "77c8f549c49f3b42f00fbee6547a70cac39f0ea6"
+                "reference": "159a976cbb80cf9f5e8d6600c294b35a2d51d92d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/illuminate/database/archive/77c8f549c49f3b42f00fbee6547a70cac39f0ea6.zip",
-                "reference": "77c8f549c49f3b42f00fbee6547a70cac39f0ea6",
+                "url": "https://github.com/illuminate/database/archive/159a976cbb80cf9f5e8d6600c294b35a2d51d92d.zip",
+                "reference": "159a976cbb80cf9f5e8d6600c294b35a2d51d92d",
                 "shasum": ""
             },
             "require": {
@@ -298,7 +298,7 @@
             "suggest": {
                 "illuminate/events": "Allows for catching of database query events."
             },
-            "time": "2012-12-23 15:13:43",
+            "time": "2012-12-24 02:08:27",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -499,12 +499,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/illuminate/foundation",
-                "reference": "e249a300cd072e64ef20f4f56a27446443cdb260"
+                "reference": "0029c88ee4098a71d3a80a3fd6556b1b019bd415"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/illuminate/foundation/archive/e249a300cd072e64ef20f4f56a27446443cdb260.zip",
-                "reference": "e249a300cd072e64ef20f4f56a27446443cdb260",
+                "url": "https://github.com/illuminate/foundation/archive/0029c88ee4098a71d3a80a3fd6556b1b019bd415.zip",
+                "reference": "0029c88ee4098a71d3a80a3fd6556b1b019bd415",
                 "shasum": ""
             },
             "require": {
@@ -541,7 +541,7 @@
             "require-dev": {
                 "mockery/mockery": "0.7.2"
             },
-            "time": "2012-12-23 19:14:34",
+            "time": "2012-12-24 00:09:35",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -624,12 +624,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/illuminate/http",
-                "reference": "e214454d1a15e089b134fac7fff2d03ed716dbb2"
+                "reference": "1aca89fcbfd3d7a441eb9fa0583bd0a3c8bccf25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/illuminate/http/archive/e214454d1a15e089b134fac7fff2d03ed716dbb2.zip",
-                "reference": "e214454d1a15e089b134fac7fff2d03ed716dbb2",
+                "url": "https://github.com/illuminate/http/archive/1aca89fcbfd3d7a441eb9fa0583bd0a3c8bccf25.zip",
+                "reference": "1aca89fcbfd3d7a441eb9fa0583bd0a3c8bccf25",
                 "shasum": ""
             },
             "require": {
@@ -640,7 +640,7 @@
             "require-dev": {
                 "mockery/mockery": "0.7.2"
             },
-            "time": "2012-12-22 04:04:09",
+            "time": "2012-12-24 00:43:35",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -955,18 +955,18 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/illuminate/support",
-                "reference": "2cf7c0fa216241ad5209ed4cbb821a7fc62806b8"
+                "reference": "43a00cfe986726531c80ef57eb4831ebcfc2e69d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/illuminate/support/archive/2cf7c0fa216241ad5209ed4cbb821a7fc62806b8.zip",
-                "reference": "2cf7c0fa216241ad5209ed4cbb821a7fc62806b8",
+                "url": "https://github.com/illuminate/support/archive/43a00cfe986726531c80ef57eb4831ebcfc2e69d.zip",
+                "reference": "43a00cfe986726531c80ef57eb4831ebcfc2e69d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-12-10 23:00:51",
+            "time": "2012-12-24 02:07:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
