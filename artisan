@@ -3,7 +3,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Register The Composer Auto Loader
+| Register The Auto Loader
 |--------------------------------------------------------------------------
 |
 | Composer provides a convenient, automatically generated class loader
@@ -13,7 +13,7 @@
 |
 */
 
-require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/bootstrap/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +28,8 @@ require __DIR__.'/vendor/autoload.php';
 */
 
 $app = require_once __DIR__.'/start.php';
+
+$app->boot();
 
 /*
 |--------------------------------------------------------------------------

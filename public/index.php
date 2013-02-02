@@ -6,11 +6,11 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
-define('ILLUMINATE_START', microtime(true));
+define('LARAVEL_START', microtime(true));
 
 /*
 |--------------------------------------------------------------------------
-| Register The Composer Auto Loader
+| Register The Auto Loader
 |--------------------------------------------------------------------------
 |
 | Composer provides a convenient, automatically generated class loader
@@ -20,7 +20,7 @@ define('ILLUMINATE_START', microtime(true));
 |
 */
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../bootstrap/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -41,13 +41,11 @@ $app = require_once __DIR__.'/../start.php';
 | Run The Application
 |--------------------------------------------------------------------------
 |
-| Once we have the application, we can simple call the run method,
+| Once we have the application, we can simply call the run method,
 | which will execute the request and send the response back to
 | the client's browser allowing them to enjoy the creative
-| this wonderful applications we have created for them.
+| and wonderful applications we have created for them.
 |
 */
 
 $app->run();
-
-//var_dump(number_format((microtime(true) - ILLUMINATE_START) * 1000, 2));

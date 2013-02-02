@@ -31,6 +31,9 @@ class Swift_Mime_SimpleMessage extends Swift_Mime_MimePart implements Swift_Mime
         parent::__construct($headers, $encoder, $cache, $grammar, $charset);
         $this->getHeaders()->defineOrdering(array(
             'Return-Path',
+            'Received',
+            'DKIM-Signature',
+            'DomainKey-Signature',
             'Sender',
             'Message-ID',
             'Date',
@@ -44,9 +47,7 @@ class Swift_Mime_SimpleMessage extends Swift_Mime_MimePart implements Swift_Mime
             'Content-Type',
             'Content-Transfer-Encoding'
             ));
-        $this->getHeaders()->setAlwaysDisplayed(
-            array('Date', 'Message-ID', 'From')
-            );
+        $this->getHeaders()->setAlwaysDisplayed(array('Date', 'Message-ID', 'From'));
         $this->getHeaders()->addTextHeader('MIME-Version', '1.0');
         $this->setDate(time());
         $this->setId($this->getId());
@@ -621,10 +622,8 @@ class Swift_Mime_SimpleMessage extends Swift_Mime_MimePart implements Swift_Mime
         return 'Message-ID';
     }
 
-    // -- Private methods
-
     /** Turn the body of this message into a child of itself if needed */
-    private function _becomeMimePart()
+    protected function _becomeMimePart()
     {
         $part = new parent($this->getHeaders()->newInstance(), $this->getEncoder(),
             $this->_getCache(), $this->_getGrammar(), $this->_userCharset
@@ -638,6 +637,8 @@ class Swift_Mime_SimpleMessage extends Swift_Mime_MimePart implements Swift_Mime
         return $part;
     }
 
+    // -- Private methods
+    
     /** Get the highest nesting level nested inside this message */
     private function _getTopNestingLevel()
     {

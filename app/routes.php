@@ -13,6 +13,5 @@
 
 Route::get('/', function()
 {
-	$data = 'Tuana Şeyma Eldem';
-	return View::make('hello')->with('name', $data);
+	return View::make('hello');
 });
