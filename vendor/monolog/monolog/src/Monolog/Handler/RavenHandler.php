@@ -11,6 +11,7 @@
 
 namespace Monolog\Handler;
 
+use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;
 use Monolog\Handler\AbstractProcessingHandler;
 use Raven_Client;
@@ -44,8 +45,8 @@ class RavenHandler extends AbstractProcessingHandler
 
     /**
      * @param Raven_Client $ravenClient
-     * @param integer $level The minimum logging level at which this handler will be triggered
-     * @param Boolean $bubble Whether the messages that are handled can bubble up the stack or not
+     * @param integer      $level       The minimum logging level at which this handler will be triggered
+     * @param Boolean      $bubble      Whether the messages that are handled can bubble up the stack or not
      */
     public function __construct(Raven_Client $ravenClient, $level = Logger::DEBUG, $bubble = true)
     {
@@ -59,14 +60,33 @@ class RavenHandler extends AbstractProcessingHandler
      */
     protected function write(array $record)
     {
+        $level = $this->logLevels[$record['level']];
+
+        $options = array();
+        $options['level'] = $level;
+        if (!empty($record['context'])) {
+            $options['extra']['context'] = $record['context'];
+        }
+        if (!empty($record['extra'])) {
+            $options['extra']['extra'] = $record['extra'];
+        }
+
         $this->ravenClient->captureMessage(
             $record['formatted'],
-            array(),                              // $params - not used
-            $this->logLevels[$record['level']],   // $level
-            false                                 // $stack
+            array(),                                                                  // $params - not used
+            version_compare(Raven_Client::VERSION, '0.1.0', '>') ? $options : $level, // $level or $options
+            false                                                                     // $stack
         );
         if ($record['level'] >= Logger::ERROR && isset($record['context']['exception'])) {
             $this->ravenClient->captureException($record['context']['exception']);
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function getDefaultFormatter()
+    {
+        return new LineFormatter('[%channel%] %message%');
     }
 }

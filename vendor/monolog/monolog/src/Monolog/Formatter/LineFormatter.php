@@ -72,6 +72,17 @@ class LineFormatter extends NormalizerFormatter
             return var_export($data, true);
         }
 
+        if ($data instanceof \Exception) {
+            $previousText = '';
+            if ($previous = $data->getPrevious()) {
+                do {
+                    $previousText .= ', '.get_class($previous).': '.$previous->getMessage().' at '.$previous->getFile().':'.$previous->getLine();
+                } while ($previous = $previous->getPrevious());
+            }
+
+            return '[object] ('.get_class($data).': '.$data->getMessage().' at '.$data->getFile().':'.$data->getLine().$previousText.')';
+        }
+
         return parent::normalize($data);
     }
 
